@@ -1,0 +1,11 @@
+def cipher(TEXT, shift):
+    ORIGINAL = "abcdefghijklmnopqrstuvwxyz"
+    SHIFTED = ORIGINAL[shift:] + ORIGINAL[:shift]
+    table = str.maketrans(ORIGINAL, SHIFTED)
+    return TEXT.translate(table)
+
+TEXT = input("Enter the text you want to encrypt/decrypt: ").lower()
+KEY = int(input("Enter the key: "))
+
+RESULT = cipher(TEXT, KEY).upper()
+print("Your encrypted/decrypted text is:", RESULT)
